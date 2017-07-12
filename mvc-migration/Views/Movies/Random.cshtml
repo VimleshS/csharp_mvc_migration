@@ -1,0 +1,33 @@
+﻿@*@model mvc_migration.Models.Movies*@
+@model mvc_migration.ViewModels.RandomViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    if (@Model.Customers.Count > 0)
+    {
+        <h1><text> This is for a popular customers</text></h1>
+    }
+}
+
+<text>Movie Name</text>
+
+<h2>@Model.Movies.Name</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <text>No has rented </text>
+} else
+{
+    <ul>
+        @foreach (var c in @Model.Customers)
+        {
+            <li>@c.Name</li>
+        }
+    </ul>
+}
+
+
+
